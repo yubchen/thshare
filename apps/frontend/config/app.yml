@@ -1,0 +1,66 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  public_publish_times: 20
+  public_binding_code: 12345679
+  taobao:
+#    app_key: 1021565936
+    app_key: 21565936
+#    app_secriet: sandbox3db61496dd60d077681d8f4b2
+    app_secriet: ff283b73db61496dd60d077681d8f4b2 
+#    auth_url: http://container.api.tbsandbox.com/container
+    auth_url: http://container.api.taobao.com/container
+  sina:
+    app_key: 515742189
+    app_secret: 16b4a404d9fee9282f16787d520038a8
+    auth_url: https://api.weibo.com/oauth2/authorize
+    access_token_url: https://api.weibo.com/oauth2/access_token
+    platform_id: 1
+  tqq:
+    app_key: 801385370
+    app_secret: a22ba0e9222e7063bf209bac8ce930c3
+    #https://open.t.qq.com/cgi-bin/oauth2/authorize?client_id=APP_KEY&response_type=code&redirect_uri=http://www.myurl.com/example
+    auth_url: https://open.t.qq.com/cgi-bin/oauth2/authorize
+    #https://open.t.qq.com/cgi-bin/oauth2/access_token?client_id=APP_KEY&client_secret=APP_SECRET&redirect_uri=http://www.myurl.com/example&grant_type=authorization_code&code=CODE
+    access_token_url: https://open.t.qq.com/cgi-bin/oauth2/access_token 
+    platform_id: 2
+  163:
+    app_key: f6ze43cCvEJQF3CX
+    app_secret: LFULXtY2Zo1Y3T8KljlgHuA6mJ0Ir6Iy
+    platform_id: 3
+    auth_url: https://api.t.163.com/oauth2/authorize
+    access_token_url: https://api.t.163.com/oauth2/access_token
+  renren:
+    app_id: 238305
+    app_key: 050f44233b0e44048a811cd83c0c502f
+    app_secret_key: a679bdb1ab65437b9921a0854da6cde7
+    auth_url: http://graph.renren.com/oauth/authorize
+    access_token_url: http://graph.renren.com/oauth/token
+    platform_id: 4
+  souhu:
+    app_key: B5FJGDsKVLvKyeDqCpP3
+    app_secret: y=FY6PF6SCMBS%#$5g^TQkw4J9WAw!B(gLu9MtmT
+    auth_url: https://api.t.sohu.com/oauth2/authorize
+    access_token_url: https://api.t.sohu.com/oauth2/access_token
+    platform_id: 5
+  kaixin:
+    app_id: 100053446
+    app_key: 451550989017ed382e0c413aa2f8325b 
+    app_secret: 55bdf3661422a2353674772fdd0a196c
+    auth_url: http://api.kaixin001.com/oauth2/authorize
+    access_token_url: https://api.kaixin001.com/oauth2/access_token
+    platform_id: 6
+  douban:
+    app_key: 0fb3f7eee5d2162e2f1be7ccb176428a
+    app_secret: 2c1a779e273999c4
+    auth_url: https://www.douban.com/service/auth2/auth
+    access_token_url: https://www.douban.com/service/auth2/token
+    platform_id: 7
+  diandian:
+    app_key: k8mY35cOeS
+    app_secret: Juno4iLrkSR8hZYfPOcGcyVGFT2B14PF2Io3
+    auth_url: https://api.diandian.com/oauth/authorize
+    access_token_url: https://api.diandian.com/oauth/token
+    platform_id: 8

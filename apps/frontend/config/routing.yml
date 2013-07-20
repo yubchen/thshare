@@ -1,0 +1,125 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: auth, action: index }
+homepage_2:
+  url:   /to-quick-publish-blog
+  param: { module: publish, action: toQuickPublishBlog }
+homepage_3:
+  url:   /home
+  param: { module: auth, action: index }
+
+login:
+  url: /login
+  param: { module: auth, action: login }
+  
+service-time-up:
+  url: /service-time-up
+  param: { module: auth, action: serviceTimeUp }
+  
+to-publish-blog: 
+  url: /to-publish-blog
+  param: { module: publish, action: toPublishBlog }
+publish-blog:
+  url: /publish-blog
+  param: { module: publish, action: publishBlog }
+to-quick-publish-blog:
+  url: /to-quick-publish-blog
+  param: { module: publish, action: toQuickPublishBlog }
+quick-publish-blog:
+  url: /quick-publish-blog
+  param: { module: publish, action: quickPublishBlog }
+test-publish-blog:
+  url: /test-publish-blog
+  param: {module: publish, action: testPublishBlog }
+
+to-public-binding:
+  url: /to-public-binding
+  param: { module: auth, action: toPublicBinding }
+close-public-binding:
+  url: /close-public-binding
+  param: { module: auth, action: closePublicBinding }
+
+account-list:
+  url: /account-list
+  param: { module: account, action: index }
+disbinding-account:
+  url: /disbinding-account
+  param: { module: account, action: disbindingBlog }
+
+#淘宝授权
+to-auth-taobao:
+  url:  /to-auth-taobao
+  param:  { module: auth, action: toAuthTaobao }
+auth-taobao:
+  url: /auth-taobao
+  param: { module: auth, action: authTaobao }
+
+#新浪授权
+to-auth-sina:
+  url: /to-auth-sina
+  param: { module: auth, action: toAuthSina }
+auth-sina:
+  url: /auth-sina
+  param: { module: auth, action: authSina }
+
+#腾讯授权
+to-auth-tqq:
+  url: /to-auth-tqq
+  param: { module: auth, action: toAuthTqq }
+auth-tqq:
+  url: /auth-tqq
+  param: { module: auth, action: authTqq }
+get-tqq-token:
+  url: /get-tqq-token
+  param: { module: auth, action: getTqqToken }
+#人人网授权
+to-auth-renren:
+  url: /to-auth-renren
+  param: { module: auth, action: toAuthRenren }
+auth-renren:
+  url: /auth-renren
+  param: { module: auth, action: authRenren }
+
+#网易授权
+to-auth-163:
+  url: /to-auth-163
+  param: { module: auth, action: toAuth163 }
+auth-163: 
+  url: /auth-163
+  param: { module: auth, action: auth163 }
+
+#搜狐微博
+to-auth-souhu:
+  url: /to-auth-souhu
+  param: { module: auth, action: toAuthSouhu }
+auth-souhu:
+  url: /auth-souhu
+  param: { module: auth, action: authSouhu }
+  
+#开心网
+to-auth-kaixin:
+  url: /to-auth-kaixin
+  param: { module: auth, action: toAuthKaixin }
+auth-kaixin:
+  url: /auth-kaixin
+  param: { module: auth, action: authKaixin }
+
+#豆瓣
+to-auth-douban:
+  url: /to-auth-douban
+  param: { module: auth, action: toAuthDouban }
+auth-douban:
+  url: /auth-douban
+  param: { module: auth, action: authDouban }
+  
+#点点
+to-auth-diandian:
+  url: /to-auth-diandian
+  param: { module: auth, action: toAuthDiandian }
+auth-diandian:
+  url: /auth-diandian
+  param: { module: auth, action: authDiandian }
