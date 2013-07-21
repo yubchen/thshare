@@ -35,7 +35,7 @@ class authActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
       if(!$this->getUser()->isLogin()){
-          $this->redirect("@to-auth-taobao");
+          $this->redirect("@login");
       }
       if(!$this->getUser()->isOnService()){
           $this->redirect("@service-time-up");
@@ -64,8 +64,11 @@ class authActions extends sfActions
     // echo $this->getUser()->getAttribute("nick");
     // echo $this->getUser()->getAttribute("sessionKey");
      $resp = $c->execute($req, $this->getUser()->getAttribute("sessionKey"));
-
+//     print_r($resp);
      //build page message and conditions
+     if(!$resp->items){
+         return $this->redirect("@to-auth-taobao");
+     }
      $this->items = $resp->items;
      $this->total_results = $resp->total_results;
      $totalPage = ceil($resp->total_results/$page_size);
@@ -133,6 +136,7 @@ class authActions extends sfActions
     $req = new UserSellerGetRequest();
     $req->setFields("user_id,nick");
     $resp = $c->execute($req, $sessionKey);
+
     $this->forward404Unless(!isset($resp->code));
     
     //判断该用户是否已经存在数据库

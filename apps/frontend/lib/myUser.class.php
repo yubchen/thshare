@@ -2,10 +2,6 @@
 
 class myUser extends sfBasicSecurityUser
 {
-    public function initialize(\sfEventDispatcher $dispatcher, \sfStorage $storage, $options = array()) {
-        parent::initialize($dispatcher, $storage, $options);
-        
-    }
     
     public function isLogin(){
 

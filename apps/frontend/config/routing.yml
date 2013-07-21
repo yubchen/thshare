@@ -15,7 +15,9 @@ homepage_3:
 login:
   url: /login
   param: { module: auth, action: login }
-  
+read-trends:
+  url: /read-trends
+  param: { module: publish, action: readTrends }
 service-time-up:
   url: /service-time-up
   param: { module: auth, action: serviceTimeUp }

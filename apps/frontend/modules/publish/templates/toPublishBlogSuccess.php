@@ -25,6 +25,17 @@
                         <input id="is_public" type="hidden" value="<?php echo $public ?>" name="public">
                         <div style="padding:10px;">
                             <h4 style="font-family:'微软雅黑'">微博内容&nbsp;<small>(字数小于140个字，否则将导致部分内容丢失或发送不成功)</small></h4>
+                            <p>
+                                <a class="btn btn-mini" onclick="readTrends('hourly')">今日热门话题</a> 
+                                <a class="btn btn-mini" onclick="readTrends('daily')">本周热门话题</a>
+                                <a class="btn btn-mini" onclick="readTrends('weekly')">本月热门话题</a>
+                                <a id="loading_topic" style="display:none">
+                                    <img src="/img/loading-dot.gif"/>
+                                </a>
+                            </p>
+                            <p id="hot_title">
+                                
+                            </p>
                             <textarea id="blog_content" name="content" style="width:90%;height:80px;"><?php echo $title ?> 详细: http://item.taobao.com?id=<?php echo $product_id ?> 价格:<?php echo $price ?>元</textarea>
                             <p style="text-align:left;padding:0;margin:0;"><button class="btn btn-small" type="button" onclick="preview()">预览效果</button>&nbsp;<span class="label label-warning">添加网址时请在网址后面添加空格</span></p>
                             <br/><strong>效果:</strong>&nbsp;&nbsp;<font id="total_count"></font>
@@ -146,6 +157,55 @@
                             $("#publish_result").hide("fast");
                             $("#close").hide("fast");
                             $("#screen").hide("slow");
+                        }
+                        function readTrends(scrop){
+                            $("#loading_topic").removeAttr("style");
+                            var data = {
+                                scrop:scrop
+                            };
+                            $.ajax({
+                                type:'post',
+                                url:"<?php echo url_for("@read-trends"); ?>",
+                                data:data,
+                                dataType:'json',
+                                success:function(result){
+                                   var strhtml = "";
+                                   for(var i=0; i<result.length; i++){
+                                      strhtml+="<span style='cursor:pointer' onclick=\"addTopic('#"+result[i].name+"#')\" class='label badge-inverse'>#"+result[i].name+"#</span>&nbsp;"; 
+                                   }
+                                   $("#hot_title").html(strhtml);
+                                   $("#loading_topic").css("display","none");
+                                },
+                                error:function(){
+                                         closeScreen();
+                                         alert("网络出错,请稍后再试");
+                                         $("#loading_topic").css("display","none");
+                                }
+                           });
+                           
+                        }
+                        function addTopic(topic){
+                            var content = $("#blog_content").val();
+                            var flag = 0;
+                            var str = '';
+                            if(content[0]==="#"){
+                                flag=1;
+                            }else{
+                                str = content;
+                            }
+                            if(flag===1){
+                                var start = 0;
+                                for(var i=1; i<content.length;i++){
+                                    if(content[i]==="#"){
+                                       start = 1; 
+                                       continue;
+                                    }
+                                    if(start===1){
+                                       str += content[i];   
+                                    }
+                                }
+                            }
+                            $("#blog_content").val(topic+" "+str.trim()); 
                         }
                     </script>
 		</div>

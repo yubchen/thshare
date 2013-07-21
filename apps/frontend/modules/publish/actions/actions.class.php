@@ -19,6 +19,22 @@ class publishActions extends sfActions
   {
     $this->forward('default', 'module');
   }
+  public function executeReadTrends(sfWebRequest $request){
+      $scrop = $request->getParameter("scrop",'daily');
+
+      $blogAccount = Doctrine::getTable("PublicAccount")->findOneBy("platform_id", sfConfig::get("app_sina_platform_id"));     
+      $access_token = $blogAccount->getToken();
+      $trendsUrl = "https://api.weibo.com/2/trends/".$scrop.".json";
+      $trendsUrl = $trendsUrl."?access_token=".$access_token."&base_app=0";
+      
+      $response = Http::request($trendsUrl);
+      $array = json_decode($response, TRUE);
+      foreach($array['trends'] as $key=>$value){
+          $list = $value;
+      }
+      return $this->renderText(json_encode($list));
+      
+  }
   public function executeToPublishBlog(sfWebRequest $request){
       if(!$this->getUser()->isLogin()){
           $this->redirect("@to-auth-taobao");
