@@ -17,11 +17,11 @@
             </li>
             <li class="divider">
             </li>
-            <li>
+  <!--          <li>
                    <a href="<?php echo url_for("@sina-hot-blog") ?>">新浪热门微博</a>
             </li>
             <li>
                    <a href="<?php echo url_for("@tqq-hot-blog") ?>">腾讯热门微博</a>
-            </li>
+            </li>-->
     </ul>
 </div>
