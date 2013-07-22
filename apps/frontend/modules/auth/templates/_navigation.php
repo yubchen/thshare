@@ -18,10 +18,10 @@
             <li class="divider">
             </li>
             <li>
-                   <a href="<?php echo url_for("@sina-hotblog") ?>">新浪热门微博</a>
+                   <a href="<?php echo url_for("@sina-hot-blog") ?>">新浪热门微博</a>
             </li>
             <li>
-                   <a href="<?php echo url_for("@tqq-hotblog") ?>">腾讯热门微博</a>
+                   <a href="<?php echo url_for("@tqq-hot-blog") ?>">腾讯热门微博</a>
             </li>
     </ul>
 </div>
