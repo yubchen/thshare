@@ -1,5 +1,5 @@
 <div data-spy="affix" data-offset-top="0">
-    <ul class="nav nav-list" style="width:160px;overflow: hidden;background:#FFF;z-index: 1000;">
+    <ul class="nav nav-list" style="width:160px;overflow: hidden;z-index: 1000;">
             <li class="nav-header">
                     一键分享
             </li>
@@ -18,7 +18,10 @@
             <li class="divider">
             </li>
             <li>
-                    <a href="#">帮助</a>
+                   <a href="<?php echo url_for("@sina-hotblog") ?>">新浪热门微博</a>
+            </li>
+            <li>
+                   <a href="<?php echo url_for("@tqq-hotblog") ?>">腾讯热门微博</a>
             </li>
     </ul>
 </div>

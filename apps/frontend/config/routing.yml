@@ -45,6 +45,7 @@ close-public-binding:
   url: /close-public-binding
   param: { module: auth, action: closePublicBinding }
 
+#账号绑定列表，取消绑定
 account-list:
   url: /account-list
   param: { module: account, action: index }
@@ -52,6 +53,16 @@ disbinding-account:
   url: /disbinding-account
   param: { module: account, action: disbindingBlog }
 
+#新浪热门微博
+sina-hot-blog:
+  url: /sina-hot-blog
+  param: { module: publish, action: sinaHotBlog }
+  
+#腾讯热门微博
+tqq-hot-blog:
+  url: /tqq-hot-blog
+  param: { module: publish, action: tqqHotBlog }
+  
 #淘宝授权
 to-auth-taobao:
   url:  /to-auth-taobao

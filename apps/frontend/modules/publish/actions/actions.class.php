@@ -282,4 +282,9 @@ class publishActions extends sfActions
       $publisher->setRedirectUri($this->generateUrl("auth-souhu",array(),true));
       $publisher->reflashToken();
   }
+  
+  public function executeSinaHotBlog(sfWebRequest $request){
+      $blogAccount = Doctrine::getTable("PublicAccount")->findOneBy("platform_id", sfConfig::get("app_sina_platform_id"));
+      $this->token = $blogAccount->getToken();
+  }
 }

@@ -39,7 +39,7 @@
         <li class="span3">
             <div class="thumbnail" style="text-align: center;">
                 <a href="#">
-                    <img src="http://localhost<?php echo $platforms['unbindPlatform'][$i]["image"]; ?>" height="80" width="80" alt="">
+                    <img src="<?php echo $platforms['unbindPlatform'][$i]["image"]; ?>" height="80" width="80" alt="">
                 </a>
                 <p style="text-align:center;font-size:12px;margin:0;"><?php echo $platforms['unbindPlatform'][$i]["name"]; ?></p>
                 <p style="text-align:center;font-size:12px;margin:0;"><a target="_blank" href="<?php echo url_for("@".$platforms['unbindPlatform'][$i]['auth_action']); ?>">绑定</a> <a href="<?php echo $platforms['unbindPlatform'][$i]['register_url'] ?>">注册</a></p>
